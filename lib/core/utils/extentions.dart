@@ -48,3 +48,10 @@ extension WidgetExtensions on Widget {
   //to sliver
   Widget get toSliver => SliverToBoxAdapter(child: this);
 }
+
+// Get name file from link
+extension NameFromUrl on String {
+  String nameFromUrl() {
+  int index = this.lastIndexOf("/")+1;
+  return this.replaceRange(0, index, "")/* .replaceAll(".pdf", "") */;
+  }
