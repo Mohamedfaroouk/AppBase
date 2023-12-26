@@ -16,11 +16,6 @@ class NotificationIcon extends StatelessWidget {
                 ImageIcon(
                   AssetImage("assets/icons/notification.png"),
                 ),
-                if (false)
-                  CircleAvatar(
-                    radius: 5,
-                    backgroundColor: Colors.red,
-                  )
               ],
             ),
           )

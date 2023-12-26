@@ -1,3 +1,5 @@
+import 'package:appbase/core/utils/alerts.dart';
+import 'package:appbase/shared/widgets/applogo.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter/material.dart';
@@ -27,7 +29,16 @@ class _HomeScreenState extends State<HomeScreen> {
               appBar: AppBar(
                 title: Text('home'.tr()),
               ),
-              body: Container());
+              body: Center(
+                child: Container(
+                  child: InkWell(
+                      onTap: () {
+                        Alerts.snack(
+                            text: "hiiiiiii", state: SnackState.success);
+                      },
+                      child: const AppLogo()),
+                ),
+              ));
         }));
   }
 }

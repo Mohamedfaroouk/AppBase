@@ -1,3 +1,4 @@
+import 'package:bot_toast/bot_toast.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_smart_dialog/flutter_smart_dialog.dart';
 
@@ -118,7 +119,7 @@ class Alerts {
         child: Dialog(
             shape:
                 RoundedRectangleBorder(borderRadius: BorderRadius.circular(25)),
-            child: const SnackDesign(
+            child: const SnackDesgin(
               state: SnackState.failed,
               text: "حدث خطأ ما",
             )),
@@ -127,17 +128,12 @@ class Alerts {
   }
 
   static Future snack({required String text, required SnackState state}) async {
-    return await SmartDialog.show(
-      builder: (context) => SizedBox(
-        width: 650,
-        child: Dialog(
-            shape:
-                RoundedRectangleBorder(borderRadius: BorderRadius.circular(25)),
-            child: SnackDesign(
-              text: text,
+    return BotToast.showCustomText(
+        onlyOne: true,
+        duration: const Duration(seconds: 3),
+        toastBuilder: (cancelFunc) => SnackDesgin(
               state: state,
-            )),
-      ),
-    );
+              text: text,
+            ));
   }
 }
