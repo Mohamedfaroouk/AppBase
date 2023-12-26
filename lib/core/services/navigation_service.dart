@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
@@ -32,10 +33,18 @@ class NavigationService {
         extra: extra);
   }
 
+  static Timer? timer;
+
   static mobileNavigateTo(String routeName) {
     // check for slide left or right
     final slide = slideLeftOrRight(routeName);
+    if (timer?.isActive == true) return;
     goNamed(routeName, extra: {"transition": slide});
+    timer = Timer(const Duration(milliseconds: 800), () {
+      timer?.cancel();
+    });
+    //start timer
+
     log("slide $slide");
   }
 

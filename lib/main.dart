@@ -46,10 +46,7 @@ class MyApp extends StatelessWidget {
       providers: [
         BlocProvider(create: (context) => GeneralCubit()),
         BlocProvider(create: (context) => AuthCubit()),
-        BlocProvider(
-            create: (context) => LayoutCubit()
-              ..getGeneralSetting()
-              ..getStoreSetting()),
+        BlocProvider(create: (context) => LayoutCubit())
       ],
       child:
           BlocBuilder<GeneralCubit, GeneralStates>(builder: (context, state) {

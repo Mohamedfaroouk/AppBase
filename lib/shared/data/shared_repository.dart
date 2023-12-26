@@ -1,6 +1,5 @@
 import 'package:efatorh/core/utils/injection.dart';
 import 'package:efatorh/modules/client/domain/model/client_model.dart';
-import 'package:efatorh/shared/componants/store_setting_model.dart';
 import 'package:efatorh/shared/models/general_setting.dart';
 
 import '../../core/data_source/dio.dart';
@@ -35,14 +34,6 @@ class SharedRepository {
     final respose = await dioService.getData(url: "/general_setting");
     if (respose.isError == false) {
       return GeneralSettings.fromJson(respose.response?.data["data"]);
-    }
-    return null;
-  }
-
-  static Future<StoreSetting?> getStoreSetting() async {
-    final respose = await dioService.getData(url: "/user-detail");
-    if (respose.isError == false) {
-      return StoreSetting.fromJson(respose.response?.data["data"]);
     }
     return null;
   }

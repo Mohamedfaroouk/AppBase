@@ -11,13 +11,6 @@ class LayoutCubit extends Cubit<LayoutStates> {
   LayoutCubit() : super(LayoutInitial());
   static LayoutCubit get(context) => BlocProvider.of(context);
 
-  getStoreSetting() async {
-    final response = await SharedRepository.getStoreSetting();
-    if (response != null) {
-      Utils.storeSettings = response;
-    }
-  }
-
   getGeneralSetting() async {
     final response = await SharedRepository.getGeneralSetting();
     if (response != null) {
@@ -45,12 +38,6 @@ class LayoutCubit extends Cubit<LayoutStates> {
       if (Utils.generalSettings.maintenanceMode == true) {
         emit(MaintenanceModeStatus());
         return;
-      }
-      if (Utils.generalSettings.introPdf != null ||
-          Utils.generalSettings.introVideo != null) {
-        if (Utils.pref().userGuid == false) {
-          emit(NeedUserGuidStatus());
-        }
       }
     }
   }
