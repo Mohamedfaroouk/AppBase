@@ -1,6 +1,6 @@
 import 'package:easy_localization/easy_localization.dart';
-import 'package:efatorh/shared/widgets/customtext.dart';
-import 'package:efatorh/shared/widgets/textfield.dart';
+import 'package:appbase/shared/widgets/customtext.dart';
+import 'package:appbase/shared/widgets/textfield.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 

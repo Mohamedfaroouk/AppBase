@@ -1,12 +1,12 @@
 import 'dart:developer';
 
-import 'package:efatorh/core/Router/Router.dart';
-import 'package:efatorh/core/services/navigation_service.dart';
+import 'package:appbase/core/Router/Router.dart';
+import 'package:appbase/core/services/navigation_service.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:efatorh/core/utils/Utils.dart';
-import 'package:efatorh/core/utils/alerts.dart';
-import 'package:efatorh/modules/auth/domain/model/user_model.dart';
-import 'package:efatorh/modules/auth/domain/request/register_request.dart';
+import 'package:appbase/core/utils/Utils.dart';
+import 'package:appbase/core/utils/alerts.dart';
+import 'package:appbase/modules/auth/domain/model/user_model.dart';
+import 'package:appbase/modules/auth/domain/request/register_request.dart';
 import '../../../core/utils/injection.dart';
 import '../domain/repository/repository.dart';
 import 'states.dart';
@@ -135,7 +135,7 @@ class AuthCubit extends Cubit<AuthStates> {
       );
       if (response != null) {
         emit(AuthVerifyOtpSuccess());
-        NavigationService.pushNamed(Routes.cashier);
+        // NavigationService.pushNamed(Routes.cashier);
       }
     } catch (e) {
       Alerts.defaultError();

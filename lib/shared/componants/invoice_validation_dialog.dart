@@ -1,6 +1,6 @@
 import 'package:easy_localization/easy_localization.dart';
-import 'package:efatorh/core/theme/dynamic_theme/colors.dart';
-import 'package:efatorh/shared/widgets/customtext.dart';
+import 'package:appbase/core/theme/dynamic_theme/colors.dart';
+import 'package:appbase/shared/widgets/customtext.dart';
 import 'package:flutter/material.dart';
 
 import '../widgets/applogo.dart';
@@ -20,7 +20,8 @@ class InvoiceValidationDialog extends StatelessWidget {
           const SizedBox(
             height: 20,
           ),
-          CustomText("shouldEnterValidData".tr(), align: TextAlign.center, fontSize: 16),
+          CustomText("shouldEnterValidData".tr(),
+              align: TextAlign.center, fontSize: 16),
           const SizedBox(
             height: 10,
           ),
@@ -31,7 +32,8 @@ class InvoiceValidationDialog extends StatelessWidget {
               ...validations.map(
                 (e) => Padding(
                   padding: const EdgeInsets.only(top: 5),
-                  child: CustomText(" * $e", align: TextAlign.start, color: AppColors.error),
+                  child: CustomText(" * $e",
+                      align: TextAlign.start, color: AppColors.error),
                 ),
               ),
             ],

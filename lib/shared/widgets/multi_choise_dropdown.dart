@@ -1,7 +1,7 @@
 import 'dart:async';
 
-import 'package:efatorh/core/theme/dynamic_theme/colors.dart';
-import 'package:efatorh/shared/widgets/customtext.dart';
+import 'package:appbase/core/theme/dynamic_theme/colors.dart';
+import 'package:appbase/shared/widgets/customtext.dart';
 import 'package:flutter/material.dart';
 
 import 'animation_build_widget.dart';
@@ -50,12 +50,16 @@ class _MultiSelectDropDownState<T> extends State<MultiSelectDropDown<T>> {
   }
 
   String listItems(List<T> items) {
-    String result = items.map((name) => widget.itemAsString.call(name).split(" ")[0]).join(" , ");
+    String result = items
+        .map((name) => widget.itemAsString.call(name).split(" ")[0])
+        .join(" , ");
     return result;
   }
 
   addOrRemoveItem(T item) {
-    selectedItems.any((element) => element == item) ? selectedItems.remove(item) : selectedItems.add(item);
+    selectedItems.any((element) => element == item)
+        ? selectedItems.remove(item)
+        : selectedItems.add(item);
 
     widget.onChange(selectedItems);
   }
@@ -81,7 +85,8 @@ class _MultiSelectDropDownState<T> extends State<MultiSelectDropDown<T>> {
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisSize: MainAxisSize.min,
               children: [
-                CustomText(widget.label.toString(), style: const TextStyle(color: Colors.black, fontSize: 15)),
+                CustomText(widget.label.toString(),
+                    style: const TextStyle(color: Colors.black, fontSize: 15)),
                 const SizedBox(height: 10),
                 WillPopScope(
                   onWillPop: () async {
@@ -102,11 +107,14 @@ class _MultiSelectDropDownState<T> extends State<MultiSelectDropDown<T>> {
                           elevation: 0,
                           shape: widget.shape ??
                               RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(10.0), side: const BorderSide(width: 1, color: Colors.black38)),
+                                  borderRadius: BorderRadius.circular(10.0),
+                                  side: const BorderSide(
+                                      width: 1, color: Colors.black38)),
                           child: ListTile(
                             tileColor: AppColors.grey,
                             key: _key,
-                            contentPadding: const EdgeInsets.symmetric(horizontal: 8, vertical: 7),
+                            contentPadding: const EdgeInsets.symmetric(
+                                horizontal: 8, vertical: 7),
                             onTap: () {
                               openOverlay();
                             },
@@ -114,7 +122,8 @@ class _MultiSelectDropDownState<T> extends State<MultiSelectDropDown<T>> {
                             title: selectedItems.isEmpty
                                 ? Text(
                                     widget.label.toString(),
-                                    style: TextStyle(color: mainColor, fontSize: 15),
+                                    style: TextStyle(
+                                        color: mainColor, fontSize: 15),
                                   )
                                 : Wrap(
                                     spacing: 5,
@@ -131,11 +140,19 @@ class _MultiSelectDropDownState<T> extends State<MultiSelectDropDown<T>> {
                                                 setState(() {});
                                               },
                                               shape: RoundedRectangleBorder(
-                                                  borderRadius: BorderRadius.circular(4.0), side: BorderSide(color: AppColors.primary, width: 0.5)),
-                                              backgroundColor: AppColors.primary.withOpacity(0.1),
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          4.0),
+                                                  side: BorderSide(
+                                                      color: AppColors.primary,
+                                                      width: 0.5)),
+                                              backgroundColor: AppColors.primary
+                                                  .withOpacity(0.1),
                                               label: Text(
                                                 widget.itemAsString.call(e),
-                                                style: TextStyle(color: AppColors.primary, fontSize: 15),
+                                                style: TextStyle(
+                                                    color: AppColors.primary,
+                                                    fontSize: 15),
                                               ),
                                             ))
                                         .toList(),
@@ -146,7 +163,9 @@ class _MultiSelectDropDownState<T> extends State<MultiSelectDropDown<T>> {
                                 AnimatedSwitcher(
                                   duration: const Duration(milliseconds: 300),
                                   child: Icon(
-                                    _hasOpenedOverlay ? Icons.keyboard_arrow_up : Icons.keyboard_arrow_down,
+                                    _hasOpenedOverlay
+                                        ? Icons.keyboard_arrow_up
+                                        : Icons.keyboard_arrow_down,
                                     key: ValueKey(_hasOpenedOverlay),
                                     color: AppColors.primary,
                                   ),
@@ -211,10 +230,13 @@ class _MultiSelectDropDownState<T> extends State<MultiSelectDropDown<T>> {
                                 child: FutureBuilder(
                                     future: _future,
                                     builder: (context, items) {
-                                      return items.connectionState == ConnectionState.waiting
+                                      return items.connectionState ==
+                                              ConnectionState.waiting
                                           ? const Padding(
                                               padding: EdgeInsets.all(15.0),
-                                              child: Center(child: CircularProgressIndicator()),
+                                              child: Center(
+                                                  child:
+                                                      CircularProgressIndicator()),
                                             )
                                           : items.data == null
                                               ? const SizedBox()
@@ -223,24 +245,47 @@ class _MultiSelectDropDownState<T> extends State<MultiSelectDropDown<T>> {
                                                     ListView.builder(
                                                       shrinkWrap: true,
                                                       padding: EdgeInsets.zero,
-                                                      itemCount: items.data?.length,
-                                                      itemBuilder: ((context, index) => ListTile(
-                                                            shape: const UnderlineInputBorder(borderSide: BorderSide(color: Colors.black26)),
+                                                      itemCount:
+                                                          items.data?.length,
+                                                      itemBuilder: ((context,
+                                                              index) =>
+                                                          ListTile(
+                                                            shape: const UnderlineInputBorder(
+                                                                borderSide: BorderSide(
+                                                                    color: Colors
+                                                                        .black26)),
                                                             onTap: () {
-                                                              addOrRemoveItem(items.data![index]);
+                                                              addOrRemoveItem(
+                                                                  items.data![
+                                                                      index]);
                                                               setState(() {});
                                                               set(() {});
                                                             },
-                                                            title: Text(widget.itemAsString.call(items.data![index]),
-                                                                style: const TextStyle(color: Colors.black, fontSize: 15)),
+                                                            title: Text(
+                                                                widget
+                                                                    .itemAsString
+                                                                    .call(items
+                                                                            .data![
+                                                                        index]),
+                                                                style: const TextStyle(
+                                                                    color: Colors
+                                                                        .black,
+                                                                    fontSize:
+                                                                        15)),
                                                             // tileColor: selectedItems.any((element) => element == items.data![index])
                                                             //     ? AppColors.lightGrey
                                                             //     : Colors.transparent,
                                                             trailing: Icon(
-                                                              selectedItems.any((element) => element == items.data![index])
-                                                                  ? Icons.check_box
-                                                                  : Icons.check_box_outline_blank,
-                                                              color: AppColors.primary,
+                                                              selectedItems.any((element) =>
+                                                                      element ==
+                                                                      items.data![
+                                                                          index])
+                                                                  ? Icons
+                                                                      .check_box
+                                                                  : Icons
+                                                                      .check_box_outline_blank,
+                                                              color: AppColors
+                                                                  .primary,
                                                             ),
                                                           )),
                                                     ),
@@ -248,19 +293,30 @@ class _MultiSelectDropDownState<T> extends State<MultiSelectDropDown<T>> {
                                                       height: 10,
                                                     ),
                                                     Padding(
-                                                      padding: const EdgeInsets.all(20.0),
+                                                      padding:
+                                                          const EdgeInsets.all(
+                                                              20.0),
                                                       child: Row(
-                                                        mainAxisAlignment: MainAxisAlignment.center,
+                                                        mainAxisAlignment:
+                                                            MainAxisAlignment
+                                                                .center,
                                                         children: [
                                                           Expanded(
-                                                            child: ElevatedButton(
-                                                                onPressed: () {
-                                                                  closeOverlay();
-                                                                },
-                                                                child: const Text(
-                                                                  "تم",
-                                                                  style: TextStyle(color: Colors.white, fontSize: 15),
-                                                                )),
+                                                            child:
+                                                                ElevatedButton(
+                                                                    onPressed:
+                                                                        () {
+                                                                      closeOverlay();
+                                                                    },
+                                                                    child:
+                                                                        const Text(
+                                                                      "تم",
+                                                                      style: TextStyle(
+                                                                          color: Colors
+                                                                              .white,
+                                                                          fontSize:
+                                                                              15),
+                                                                    )),
                                                           ),
                                                           const SizedBox(
                                                             width: 10,

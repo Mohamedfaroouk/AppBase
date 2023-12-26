@@ -1,8 +1,8 @@
 import 'dart:async';
 
 import 'package:easy_localization/easy_localization.dart';
-import 'package:efatorh/core/theme/dynamic_theme/colors.dart';
-import 'package:efatorh/shared/widgets/customtext.dart';
+import 'package:appbase/core/theme/dynamic_theme/colors.dart';
+import 'package:appbase/shared/widgets/customtext.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -59,7 +59,8 @@ class _QuantityDialogState extends State<QuantityDialog> {
                   IconButton(
                       onPressed: () {
                         if (controller.text == "1") return;
-                        controller.text = (int.parse(controller.text) - 1).toString();
+                        controller.text =
+                            (int.parse(controller.text) - 1).toString();
                         //close timer
                         timer?.cancel();
                       },
@@ -68,19 +69,25 @@ class _QuantityDialogState extends State<QuantityDialog> {
                     width: 100,
                     child: TextField(
                       textAlign: TextAlign.center,
-                      style: const TextStyle(color: Colors.black, fontSize: 20, fontWeight: FontWeight.bold),
+                      style: const TextStyle(
+                          color: Colors.black,
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold),
                       controller: controller,
                       keyboardType: TextInputType.number,
                       onChanged: (s) {
                         //close timer
                         timer?.cancel();
                       },
-                      inputFormatters: [FilteringTextInputFormatter.allow(Utils.doubleNumRegEx)],
+                      inputFormatters: [
+                        FilteringTextInputFormatter.allow(Utils.doubleNumRegEx)
+                      ],
                     ),
                   ),
                   IconButton(
                       onPressed: () {
-                        controller.text = (int.parse(controller.text) + 1).toString();
+                        controller.text =
+                            (int.parse(controller.text) + 1).toString();
                         //close timer
                         timer?.cancel();
                       },
@@ -95,7 +102,10 @@ class _QuantityDialogState extends State<QuantityDialog> {
                         onPressed: () {
                           Navigator.pop(context);
                         },
-                        child: CustomText("cancel".tr(), weight: FontWeight.bold, color: AppColors.primary, fontSize: 16)),
+                        child: CustomText("cancel".tr(),
+                            weight: FontWeight.bold,
+                            color: AppColors.primary,
+                            fontSize: 16)),
                   ),
                   Expanded(
                     child: TextButton(
@@ -103,7 +113,10 @@ class _QuantityDialogState extends State<QuantityDialog> {
                           isDone = true;
                           Navigator.pop(context, double.parse(controller.text));
                         },
-                        child: CustomText("done".tr(), weight: FontWeight.bold, color: AppColors.primary, fontSize: 16)),
+                        child: CustomText("done".tr(),
+                            weight: FontWeight.bold,
+                            color: AppColors.primary,
+                            fontSize: 16)),
                   ),
                 ],
               )

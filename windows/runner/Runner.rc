@@ -90,12 +90,12 @@ BEGIN
         BLOCK "040904e4"
         BEGIN
             VALUE "CompanyName", "com.example" "\0"
-            VALUE "FileDescription", "efatorh_tablet" "\0"
+            VALUE "FileDescription", "appbase" "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
-            VALUE "InternalName", "efatorh_tablet" "\0"
+            VALUE "InternalName", "appbase" "\0"
             VALUE "LegalCopyright", "Copyright (C) 2023 com.example. All rights reserved." "\0"
-            VALUE "OriginalFilename", "efatorh_tablet.exe" "\0"
-            VALUE "ProductName", "efatorh_tablet" "\0"
+            VALUE "OriginalFilename", "appbase.exe" "\0"
+            VALUE "ProductName", "appbase" "\0"
             VALUE "ProductVersion", VERSION_AS_STRING "\0"
         END
     END

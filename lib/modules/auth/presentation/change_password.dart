@@ -1,6 +1,6 @@
 import 'package:easy_localization/easy_localization.dart';
-import 'package:efatorh/modules/auth/cubit/cubit.dart';
-import 'package:efatorh/shared/widgets/textfield.dart';
+import 'package:appbase/modules/auth/cubit/cubit.dart';
+import 'package:appbase/shared/widgets/textfield.dart';
 import 'package:flutter/material.dart';
 
 import '../../../core/utils/validations.dart';
@@ -93,9 +93,13 @@ class _ChangePasswordState extends State<ChangePassword> {
                     text: "send".tr(),
                     onTap: () {
                       if (_formKey.currentState!.validate()) {
-                        AuthCubit.get(context).forgetPasswordRequest.token = token.text;
-                        AuthCubit.get(context).forgetPasswordRequest.password = pass.text;
-                        AuthCubit.get(context).forgetPasswordRequest.passwordConfirmation = passComfirm.text;
+                        AuthCubit.get(context).forgetPasswordRequest.token =
+                            token.text;
+                        AuthCubit.get(context).forgetPasswordRequest.password =
+                            pass.text;
+                        AuthCubit.get(context)
+                            .forgetPasswordRequest
+                            .passwordConfirmation = passComfirm.text;
 
                         AuthCubit.get(context).resetPassword();
                       }

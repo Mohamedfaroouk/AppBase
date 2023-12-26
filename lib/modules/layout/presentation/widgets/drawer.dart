@@ -1,9 +1,9 @@
 import 'package:easy_localization/easy_localization.dart';
-import 'package:efatorh/core/Router/Router.dart';
-import 'package:efatorh/core/services/navigation_service.dart';
-import 'package:efatorh/core/theme/dynamic_theme/colors.dart';
-import 'package:efatorh/shared/general_cubit/cubit.dart';
-import 'package:efatorh/shared/widgets/applogo.dart';
+import 'package:appbase/core/Router/Router.dart';
+import 'package:appbase/core/services/navigation_service.dart';
+import 'package:appbase/core/theme/dynamic_theme/colors.dart';
+import 'package:appbase/shared/general_cubit/cubit.dart';
+import 'package:appbase/shared/widgets/applogo.dart';
 import 'package:flutter/material.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 import 'package:url_launcher/url_launcher.dart';

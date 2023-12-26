@@ -1,6 +1,5 @@
-import 'package:efatorh/core/utils/injection.dart';
-import 'package:efatorh/modules/client/domain/model/client_model.dart';
-import 'package:efatorh/shared/models/general_setting.dart';
+import 'package:appbase/core/utils/injection.dart';
+import 'package:appbase/shared/models/general_setting.dart';
 
 import '../../core/data_source/dio.dart';
 import '../../modules/auth/domain/model/user_model.dart';
@@ -14,18 +13,6 @@ class SharedRepository {
     if (respose.isError == false) {
       return List<Cites>.from(
           respose.response?.data["data"].map((x) => Cites.fromJson(x)));
-    }
-    return [];
-  }
-
-  // get clients
-  static Future<List<Client>> getClients({String? search}) async {
-    final respose = await dioService.getData(
-        url: "/getClient", query: {if (search != null) "search": search});
-
-    if (respose.isError == false) {
-      return List<Client>.from(
-          respose.response?.data["data"].map((x) => Client.fromJson(x)));
     }
     return [];
   }

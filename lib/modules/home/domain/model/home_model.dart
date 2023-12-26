@@ -1,18 +1,20 @@
 import '../../../../core/utils/Utils.dart';
 import '../../../../shared/models/translations.dart';
 
-class ClientModel {
+class HomeModel {
   int lastPage = 1;
-  List<Client>? clients;
+  List<Home>? homes;
 
   //from json
-  ClientModel.fromJson(Map<String, dynamic> json) {
+  HomeModel.fromJson(Map<String, dynamic> json) {
     lastPage = json['meta'] != null ? json['meta']['last_page'] : 1;
-    clients = json['data'] != null ? List<Client>.from(json['data'].map((x) => Client.fromJson(x))) : null;
+    homes = json['data'] != null
+        ? List<Home>.from(json['data'].map((x) => Home.fromJson(x)))
+        : null;
   }
 }
 
-class Client {
+class Home {
   int? id;
   TranslationModel? translation;
   String? nameApi;
@@ -20,15 +22,25 @@ class Client {
   String? taxNumber;
   String? address;
 
-  Client({this.id, this.nameApi, this.phone, this.taxNumber, this.address, this.translation});
+  Home(
+      {this.id,
+      this.nameApi,
+      this.phone,
+      this.taxNumber,
+      this.address,
+      this.translation});
   String get name {
-    return Utils.local == "ar" ? translation?.ar ?? nameApi ?? "" : translation?.en ?? nameApi ?? "";
+    return Utils.local == "ar"
+        ? translation?.ar ?? nameApi ?? ""
+        : translation?.en ?? nameApi ?? "";
   }
 
-  Client.fromJson(Map<String, dynamic> json) {
+  Home.fromJson(Map<String, dynamic> json) {
     id = json['id'];
     nameApi = json['name'];
-    translation = json['name_json'] != null ? TranslationModel.fromJson(json['name_json']) : null;
+    translation = json['name_json'] != null
+        ? TranslationModel.fromJson(json['name_json'])
+        : null;
     phone = json['phone'];
     taxNumber = json['tax_number'];
     address = json['address'];
@@ -38,8 +50,8 @@ class Client {
     final Map<String, dynamic> data = <String, dynamic>{};
     data['id'] = id;
     data['name'] = {
-      "ar": translation?.ar,
       "en": translation?.en,
+      "ar": translation?.ar,
     };
     data['phone'] = phone;
     data['tax_number'] = taxNumber;

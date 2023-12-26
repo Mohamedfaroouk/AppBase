@@ -1,12 +1,13 @@
 import 'package:easy_localization/easy_localization.dart';
-import 'package:efatorh/core/theme/dynamic_theme/colors.dart';
-import 'package:efatorh/shared/widgets/customtext.dart';
+import 'package:appbase/core/theme/dynamic_theme/colors.dart';
+import 'package:appbase/shared/widgets/customtext.dart';
 import 'package:flutter/material.dart';
 
 enum InvoiceType { simpleTaxed, taxed }
 
 class InvoiceTypeSelect extends StatefulWidget {
-  const InvoiceTypeSelect({super.key, required this.onSelect, this.invoiceType});
+  const InvoiceTypeSelect(
+      {super.key, required this.onSelect, this.invoiceType});
   final ValueChanged<InvoiceType> onSelect;
   final InvoiceType? invoiceType;
   @override
@@ -41,7 +42,9 @@ class _InvoiceTypeSelectState extends State<InvoiceTypeSelect> {
                       mainAxisSize: MainAxisSize.min,
                       children: [
                         Icon(
-                          widget.invoiceType == InvoiceType.taxed ? Icons.check_box : Icons.check_box_outline_blank,
+                          widget.invoiceType == InvoiceType.taxed
+                              ? Icons.check_box
+                              : Icons.check_box_outline_blank,
                           color: AppColors.primary,
                         ),
                         const SizedBox(width: 5),
@@ -67,7 +70,9 @@ class _InvoiceTypeSelectState extends State<InvoiceTypeSelect> {
                       mainAxisSize: MainAxisSize.min,
                       children: [
                         Icon(
-                          widget.invoiceType == InvoiceType.simpleTaxed ? Icons.check_box : Icons.check_box_outline_blank,
+                          widget.invoiceType == InvoiceType.simpleTaxed
+                              ? Icons.check_box
+                              : Icons.check_box_outline_blank,
                           color: AppColors.primary,
                         ),
                         const SizedBox(width: 5),

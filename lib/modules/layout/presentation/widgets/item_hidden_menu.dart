@@ -1,6 +1,3 @@
-import 'package:efatorh/core/utils/Utils.dart';
-import 'package:efatorh/core/utils/alerts.dart';
-import 'package:efatorh/modules/auth/domain/model/app_featuers.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../shared/widgets/customtext.dart';
@@ -16,7 +13,7 @@ class ItemHiddenMenu extends StatelessWidget {
   final TextStyle? baseStyle;
   final TextStyle? selectedStyle;
   final bool? selected;
-  final AppFeatures? appFeatures;
+  // final AppFeatures? appFeatures;
 
   const ItemHiddenMenu({
     super.key,
@@ -29,7 +26,7 @@ class ItemHiddenMenu extends StatelessWidget {
     this.baseStyle,
     this.arrowColor = Colors.grey,
     this.selectedStyle,
-    this.appFeatures,
+    // this.appFeatures,
   });
 
   @override
@@ -42,15 +39,7 @@ class ItemHiddenMenu extends StatelessWidget {
           elevation: 0,
           child: InkWell(
             onTap: () {
-              if (appFeatures != null) {
-                if (Utils.user?.hasAccess(appFeatures!)) {
-                  onTap!();
-                } else {
-                  Alerts.shouldUpgradeDialog();
-                }
-              } else {
-                onTap!();
-              }
+              onTap!();
             },
             child: Padding(
               padding: const EdgeInsets.only(

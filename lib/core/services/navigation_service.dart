@@ -55,30 +55,18 @@ class NavigationService {
 
   //check for current route
   static bool isRouteContain(String routeName) {
-    return route.goRouter.routeInformationProvider.value.location
-            ?.contains(routeName) ??
-        false;
+    return Routes.currentRoute == routeName;
   }
   // is mobile route
 
   static bool isMobileRouteContain() {
-    return mobileRoutes()
-        .contains(route.goRouter.routeInformationProvider.value.location ?? "");
-  }
-
-  static mobileRoutes() {
-    return [
-      Routes.sales,
-      Routes.client,
-      Routes.cashier,
-      Routes.product,
-      Routes.storeDetailsRoute,
-    ];
+    final currentRouteIndex = mobileRoutes()
+        .indexOf(route.goRouter.namedLocation(Routes.currentRoute));
+    return currentRouteIndex != -1;
   }
 
   static String slideLeftOrRight(String newRoute) {
-    final currentRoute =
-        route.goRouter.routeInformationProvider.value.location ?? "";
+    final currentRoute = Routes.currentRoute;
     final currentRouteIndex = mobileRoutes()
         .indexOf(route.goRouter.namedLocation(currentRoute) ?? "");
 
@@ -88,5 +76,15 @@ class NavigationService {
     } else {
       return "slideLeft";
     }
+  }
+
+// MOBILE NAVIGATION ROUTES
+  static mobileRoutes() {
+    return [
+      Routes.feature1,
+      Routes.feature2,
+      Routes.feature3,
+      Routes.home,
+    ];
   }
 }

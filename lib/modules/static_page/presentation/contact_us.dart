@@ -1,9 +1,9 @@
 import 'package:easy_localization/easy_localization.dart';
-import 'package:efatorh/core/theme/dynamic_theme/colors.dart';
-import 'package:efatorh/modules/static_page/cubit/cubit.dart';
-import 'package:efatorh/modules/static_page/cubit/states.dart';
-import 'package:efatorh/shared/widgets/buttons.dart';
-import 'package:efatorh/shared/widgets/textfield.dart';
+import 'package:appbase/core/theme/dynamic_theme/colors.dart';
+import 'package:appbase/modules/static_page/cubit/cubit.dart';
+import 'package:appbase/modules/static_page/cubit/states.dart';
+import 'package:appbase/shared/widgets/buttons.dart';
+import 'package:appbase/shared/widgets/textfield.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';

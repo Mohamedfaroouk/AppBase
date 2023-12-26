@@ -1,14 +1,7 @@
-import 'package:easy_localization/easy_localization.dart';
-import 'package:efatorh/core/Router/Router.dart';
-import 'package:efatorh/core/services/navigation_service.dart';
-import 'package:efatorh/core/utils/Utils.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_smart_dialog/flutter_smart_dialog.dart';
 
 import '../../shared/widgets/alert_dialog.dart';
-import '../../shared/widgets/applogo.dart';
-import '../../shared/widgets/buttons.dart';
-import '../../shared/widgets/customtext.dart';
 import '../../shared/widgets/snackbar.dart';
 
 enum SnackState { success, failed }
@@ -133,10 +126,6 @@ class Alerts {
     );
   }
 
-  static shouldUpgradeDialog() {
-    infoDialog(NavigationService.context, child: const ShouldUpgradeDialog());
-  }
-
   static Future snack({required String text, required SnackState state}) async {
     return await SmartDialog.show(
       builder: (context) => SizedBox(
@@ -148,60 +137,6 @@ class Alerts {
               text: text,
               state: state,
             )),
-      ),
-    );
-  }
-}
-
-class ShouldUpgradeDialog extends StatelessWidget {
-  const ShouldUpgradeDialog({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(25.0),
-      child: Card(
-        elevation: 0,
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            const AppLogo(
-              whiteFont: true,
-            ),
-            const SizedBox(
-              height: 20,
-            ),
-            Flexible(
-              child: CustomText(
-                "shouldUpgrade".tr(),
-                weight: FontWeight.bold,
-                align: TextAlign.center,
-                fontSize: 20,
-                textStyleEnum: TextStyleEnum.normal,
-              ),
-            ),
-            const SizedBox(
-              height: 20,
-            ),
-            if (Utils.user?.userType == 0)
-              SizedBox(
-                height: 45,
-                child: DefaultButton(
-                  text: "upgrade".tr(),
-                  onTap: () {
-                    Navigator.pop(NavigationService.context);
-                    NavigationService.pushNamed(Routes.packages);
-                  },
-                ),
-              ),
-            const SizedBox(
-              width: 20,
-            ),
-          ],
-        ),
       ),
     );
   }

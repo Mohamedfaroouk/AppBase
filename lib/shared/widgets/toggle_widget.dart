@@ -1,5 +1,5 @@
 import 'package:easy_localization/easy_localization.dart';
-import 'package:efatorh/core/theme/dynamic_theme/colors.dart';
+import 'package:appbase/core/theme/dynamic_theme/colors.dart';
 import 'package:flutter/material.dart';
 
 class ToggleWidget extends StatefulWidget {
@@ -95,7 +95,9 @@ class _ToggleWidgetState extends State<ToggleWidget> {
                                     style: TextStyle(
                                       fontSize: 16,
                                       fontWeight: FontWeight.w500,
-                                      color: isSelectFirstType == true ? Colors.white : Colors.black,
+                                      color: isSelectFirstType == true
+                                          ? Colors.white
+                                          : Colors.black,
                                     ),
                                   ),
                                 ),
@@ -117,7 +119,9 @@ class _ToggleWidgetState extends State<ToggleWidget> {
                                     style: TextStyle(
                                       fontWeight: FontWeight.w500,
                                       fontSize: 16,
-                                      color: isSelectFirstType == false ? Colors.white : Colors.black,
+                                      color: isSelectFirstType == false
+                                          ? Colors.white
+                                          : Colors.black,
                                     ),
                                   ),
                                 ),

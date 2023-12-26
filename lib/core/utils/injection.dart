@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
-import 'package:efatorh/core/Router/Router.dart';
-import 'package:efatorh/modules/auth/domain/repository/repository.dart';
+import 'package:appbase/core/Router/Router.dart';
+import 'package:appbase/modules/auth/domain/repository/repository.dart';
 
 import '../config/key.dart';
 import '../data_source/PrefService.dart';

@@ -1,6 +1,6 @@
 import 'package:easy_localization/easy_localization.dart';
-import 'package:efatorh/shared/widgets/applogo.dart';
-import 'package:efatorh/shared/widgets/buttons.dart';
+import 'package:appbase/shared/widgets/applogo.dart';
+import 'package:appbase/shared/widgets/buttons.dart';
 import 'package:flutter_smart_dialog/flutter_smart_dialog.dart';
 import 'package:lottie/lottie.dart';
 import 'package:flutter/material.dart';

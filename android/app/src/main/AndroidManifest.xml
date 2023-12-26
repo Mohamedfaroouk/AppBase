@@ -1,9 +1,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.efatorh_tablet">
+    package="com.example.appbase_tablet">
     <uses-permission android:name="android.permission.INTERNET"/>
 
    <application
-        android:label="efatorh_tablet"
+        android:label="appbase_tablet"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

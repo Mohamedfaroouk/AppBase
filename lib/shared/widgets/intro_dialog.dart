@@ -2,10 +2,10 @@ import 'dart:developer';
 
 import 'package:chewie/chewie.dart';
 import 'package:easy_localization/easy_localization.dart';
-import 'package:efatorh/core/theme/dynamic_theme/colors.dart';
-import 'package:efatorh/core/utils/Utils.dart';
-import 'package:efatorh/shared/widgets/applogo.dart';
-import 'package:efatorh/shared/widgets/customtext.dart';
+import 'package:appbase/core/theme/dynamic_theme/colors.dart';
+import 'package:appbase/core/utils/Utils.dart';
+import 'package:appbase/shared/widgets/applogo.dart';
+import 'package:appbase/shared/widgets/customtext.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_cached_pdfview/flutter_cached_pdfview.dart';
 import 'package:video_player/video_player.dart';
@@ -53,7 +53,7 @@ class IntroDialog extends StatelessWidget {
                   ],
                 ),
               ),
-              CustomText("welcomeToEfatorh".tr(),
+              CustomText("welcomeToappbase".tr(),
                   weight: FontWeight.w500, color: Colors.black, fontSize: 20),
               const Divider(),
               const SizedBox(

@@ -1,4 +1,4 @@
-package com.example.efatorh_tablet
+package com.example.appbase_tablet
 
 import io.flutter.embedding.android.FlutterActivity
 

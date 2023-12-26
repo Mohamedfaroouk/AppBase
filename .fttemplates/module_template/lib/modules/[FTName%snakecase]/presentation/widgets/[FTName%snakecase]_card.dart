@@ -1,8 +1,8 @@
 import 'package:easy_localization/easy_localization.dart';
-import 'package:efatorh/core/Router/Router.dart';
-import 'package:efatorh/core/services/navigation_service.dart';
-import 'package:efatorh/core/theme/dynamic_theme/colors.dart';
-import 'package:efatorh/shared/widgets/buttons.dart';
+import 'package:appbase/core/Router/Router.dart';
+import 'package:appbase/core/services/navigation_service.dart';
+import 'package:appbase/core/theme/dynamic_theme/colors.dart';
+import 'package:appbase/shared/widgets/buttons.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../shared/widgets/are_u_sure_dialog.dart';

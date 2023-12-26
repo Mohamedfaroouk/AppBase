@@ -1,6 +1,4 @@
-import 'package:efatorh/modules/auth/domain/model/user_package.dart';
-
-import 'app_featuers.dart';
+import 'package:appbase/modules/auth/domain/model/user_package.dart';
 
 class UserModel {
   int? id;
@@ -103,42 +101,5 @@ class UserModel {
 
   isFree() {
     return subscription == null;
-  }
-
-  hasAccess(AppFeatures feature) {
-    // return true;
-    if (subscription == null) return false;
-    switch (feature) {
-      case AppFeatures.reports_on:
-        return subscription!.reportsOn;
-      case AppFeatures.copy_rights_visible:
-        return subscription!.copyRightsVisible;
-      case AppFeatures.price_quotation:
-        return subscription!.priceQuotation;
-      case AppFeatures.purchase_invoices:
-        return subscription!.purchaseInvoices;
-      case AppFeatures.product_movement:
-        return subscription!.productMovement;
-      case AppFeatures.refund_purchase:
-        return subscription!.refundPurchase;
-      case AppFeatures.refund_order:
-        return subscription!.refundOrder;
-      case AppFeatures.language:
-        return subscription!.language;
-      case AppFeatures.product_excel:
-        return subscription!.productExcel;
-      case AppFeatures.product_barcode:
-        return subscription!.productBarcode;
-      case AppFeatures.stocks:
-        return subscription!.stocks;
-      case AppFeatures.tax_return:
-        return subscription!.taxReturn;
-      case AppFeatures.categories:
-        return subscription!.categories;
-      case AppFeatures.suppliers:
-        return subscription!.suppliers;
-      default:
-        return false;
-    }
   }
 }

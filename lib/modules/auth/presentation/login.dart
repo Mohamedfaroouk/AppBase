@@ -1,5 +1,4 @@
 import 'package:easy_localization/easy_localization.dart';
-import 'package:efatorh/core/utils/Utils.dart';
 import 'package:flutter/material.dart';
 
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -44,30 +43,7 @@ class _LoginScreenState extends State<LoginScreen> {
       key: formKey,
       child: BlocConsumer<AuthCubit, AuthStates>(listener: (context, state) {
         if (state is AuthLoginSuccess) {
-          NavigationService.goNamed(Routes.cashier);
-          return;
-          if (Utils.user?.phoneVerified == 1) {
-            NavigationService.goNamed(Routes.cashier);
-          } else {
-            NavigationService.goNamed(Routes.otpScreen, extra: {
-              "phone": Utils.user?.phone,
-              "countryCode": Utils.user?.countryCode,
-              "sendOnStart": true,
-              "onVerify": (String phone, String code, String otp) {
-                AuthCubit.get(NavigationService.context)
-                    .verifyOtp(phone: phone, countryCode: code, otp: otp);
-              },
-              "onReSend": (
-                String phone,
-                String code,
-              ) {
-                AuthCubit.get(NavigationService.context).sendOtp(
-                  phone: phone,
-                  countryCode: code,
-                );
-              },
-            });
-          }
+          NavigationService.goNamed(Routes.home);
         }
       }, builder: (context, state) {
         return Scaffold(

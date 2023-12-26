@@ -1,6 +1,6 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:efatorh/core/data_source/hive_service.dart';
+import 'package:appbase/core/data_source/hive_service.dart';
 
 import 'buttons.dart';
 import 'customtext.dart';
@@ -157,7 +157,8 @@ class _NotificationDialogState extends State<NotificationDialog> {
           Row(
             children: <Widget>[
               const SizedBox(width: 20),
-              Expanded(child: DefaultButton(text: "ok".tr(), onTap: () async {})),
+              Expanded(
+                  child: DefaultButton(text: "ok".tr(), onTap: () async {})),
               const SizedBox(width: 20),
             ],
           ),

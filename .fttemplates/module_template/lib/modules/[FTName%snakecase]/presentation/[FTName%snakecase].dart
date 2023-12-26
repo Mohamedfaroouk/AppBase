@@ -1,9 +1,9 @@
 import 'package:easy_localization/easy_localization.dart';
-import 'package:efatorh/modules/<FTName | snakecase>/domain/model/<FTName | snakecase>_model.dart';
-import 'package:efatorh/modules/<FTName | snakecase>/presentation/widgets/<FTName | snakecase>_card.dart';
-import 'package:efatorh/modules/<FTName | snakecase>/presentation/widgets/<FTName | snakecase>_header.dart';
-import 'package:efatorh/shared/widgets/errorWidget.dart';
-import 'package:efatorh/shared/widgets/myLoading.dart';
+import 'package:appbase/modules/<FTName | snakecase>/domain/model/<FTName | snakecase>_model.dart';
+import 'package:appbase/modules/<FTName | snakecase>/presentation/widgets/<FTName | snakecase>_card.dart';
+import 'package:appbase/modules/<FTName | snakecase>/presentation/widgets/<FTName | snakecase>_header.dart';
+import 'package:appbase/shared/widgets/errorWidget.dart';
+import 'package:appbase/shared/widgets/myLoading.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter/material.dart';
 

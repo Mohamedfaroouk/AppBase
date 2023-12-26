@@ -1,8 +1,8 @@
 import 'package:easy_localization/easy_localization.dart';
-import 'package:efatorh/modules/<FTName | snakecase>/cubit/cubit.dart';
-import 'package:efatorh/modules/<FTName | snakecase>/domain/model/<FTName | snakecase>_model.dart';
-import 'package:efatorh/shared/models/translations.dart';
-import 'package:efatorh/shared/widgets/textfield.dart';
+import 'package:appbase/modules/<FTName | snakecase>/cubit/cubit.dart';
+import 'package:appbase/modules/<FTName | snakecase>/domain/model/<FTName | snakecase>_model.dart';
+import 'package:appbase/shared/models/translations.dart';
+import 'package:appbase/shared/widgets/textfield.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 

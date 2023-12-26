@@ -1,6 +1,6 @@
 import 'package:easy_localization/easy_localization.dart';
-import 'package:efatorh/core/theme/dynamic_theme/colors.dart';
-import 'package:efatorh/shared/widgets/customtext.dart';
+import 'package:appbase/core/theme/dynamic_theme/colors.dart';
+import 'package:appbase/shared/widgets/customtext.dart';
 import 'package:flutter/material.dart';
 
 class InvoiceDatePicker extends StatelessWidget {
@@ -53,7 +53,8 @@ class InvoiceDatePicker extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     SizedBox(
-                      child: CustomText(date1.text, color: Colors.black, fontSize: isDesktop ? 12 : 15),
+                      child: CustomText(date1.text,
+                          color: Colors.black, fontSize: isDesktop ? 12 : 15),
                     ),
                     const SizedBox(
                       width: 5,

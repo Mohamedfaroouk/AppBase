@@ -1,7 +1,7 @@
 import 'package:easy_localization/easy_localization.dart';
-import 'package:efatorh/core/theme/dynamic_theme/colors.dart';
-import 'package:efatorh/modules/auth/cubit/cubit.dart';
-import 'package:efatorh/shared/widgets/applogo.dart';
+import 'package:appbase/core/theme/dynamic_theme/colors.dart';
+import 'package:appbase/modules/auth/cubit/cubit.dart';
+import 'package:appbase/shared/widgets/applogo.dart';
 import 'package:flutter/material.dart';
 
 import 'customtext.dart';

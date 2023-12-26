@@ -2,7 +2,7 @@ import 'dart:io';
 
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
-import 'package:efatorh/core/data_source/hive_service.dart';
+import 'package:appbase/core/data_source/hive_service.dart';
 
 import 'notification_manger.dart';
 
@@ -20,14 +20,18 @@ class FcmNotification {
 //
   static String deviceToken = "";
 
-  FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin = FlutterLocalNotificationsPlugin();
+  FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin =
+      FlutterLocalNotificationsPlugin();
 
   init() async {
     NotificationManger().init();
 
-    print("FirebaseMessaging.instance.getToken() ${await FirebaseMessaging.instance.getToken()}");
+    print(
+        "FirebaseMessaging.instance.getToken() ${await FirebaseMessaging.instance.getToken()}");
 
-    await FirebaseMessaging.instance.setForegroundNotificationPresentationOptions(alert: true, badge: true, sound: true);
+    await FirebaseMessaging.instance
+        .setForegroundNotificationPresentationOptions(
+            alert: true, badge: true, sound: true);
 
     listenToNotification();
   }

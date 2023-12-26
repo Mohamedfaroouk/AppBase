@@ -1,6 +1,4 @@
-import 'package:efatorh/core/Router/Router.dart';
-import 'package:efatorh/core/services/navigation_service.dart';
-import 'package:efatorh/core/utils/Utils.dart';
+import 'package:appbase/core/utils/Utils.dart';
 import 'package:flutter/material.dart';
 
 class NotificationIcon extends StatelessWidget {
@@ -11,7 +9,7 @@ class NotificationIcon extends StatelessWidget {
     return Utils.user?.userType == 0
         ? IconButton(
             onPressed: () {
-              NavigationService.pushNamed(Routes.notification);
+              // NavigationService.pushNamed(Routes.notification);
             },
             icon: const Stack(
               children: [

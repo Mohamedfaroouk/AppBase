@@ -1,4 +1,4 @@
-import 'package:efatorh/modules/<FTName | snakecase>/domain/repository/endpoints.dart';
+import 'package:appbase/modules/<FTName | snakecase>/domain/repository/endpoints.dart';
 
 import '../../../../core/data_source/dio.dart';
 import '../model/<FTName | snakecase>_model.dart';

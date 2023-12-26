@@ -1,15 +1,15 @@
 import 'package:bot_toast/bot_toast.dart';
 import 'package:easy_localization/easy_localization.dart';
-import 'package:efatorh/shared/widgets/reaponive_framwork_widget.dart';
+import 'package:appbase/shared/widgets/reaponive_framwork_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_smart_dialog/flutter_smart_dialog.dart';
-import 'package:efatorh/core/data_source/hive_service.dart';
-import 'package:efatorh/core/theme/app_theme.dart';
-import 'package:efatorh/modules/auth/cubit/cubit.dart';
-import 'package:efatorh/modules/layout/cubit/cubit.dart';
-import 'package:efatorh/shared/general_cubit/cubit.dart';
-import 'package:efatorh/shared/general_cubit/states.dart';
+import 'package:appbase/core/data_source/hive_service.dart';
+import 'package:appbase/core/theme/app_theme.dart';
+import 'package:appbase/modules/auth/cubit/cubit.dart';
+import 'package:appbase/modules/layout/cubit/cubit.dart';
+import 'package:appbase/shared/general_cubit/cubit.dart';
+import 'package:appbase/shared/general_cubit/states.dart';
 
 import 'core/Router/Router.dart';
 import 'core/config/config.dart';

@@ -1,3 +1,0 @@
-class ClientRequest {
-  String? page;
-}

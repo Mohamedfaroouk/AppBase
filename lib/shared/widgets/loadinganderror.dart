@@ -1,10 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:efatorh/shared/widgets/myLoading.dart';
+import 'package:appbase/shared/widgets/myLoading.dart';
 import '../../core/theme/dynamic_theme/colors.dart';
 import 'customtext.dart';
 
 class LoadingAndError extends StatelessWidget {
-  const LoadingAndError({Key? key, required this.isError, required this.isLoading, required this.child, this.loadingWidget, this.errorWidget})
+  const LoadingAndError(
+      {Key? key,
+      required this.isError,
+      required this.isLoading,
+      required this.child,
+      this.loadingWidget,
+      this.errorWidget})
       : super(key: key);
   final bool isError;
   final bool isLoading;

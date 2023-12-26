@@ -1,6 +1,6 @@
 {
-    "name": "efatorh_tablet",
-    "short_name": "efatorh_tablet",
+    "name": "appbase_tablet",
+    "short_name": "appbase_tablet",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

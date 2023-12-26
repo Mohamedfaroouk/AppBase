@@ -1,7 +1,7 @@
 import 'dart:io';
 
 import 'package:easy_localization/easy_localization.dart';
-import 'package:efatorh/core/utils/Utils.dart';
+import 'package:appbase/core/utils/Utils.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -72,11 +72,11 @@ class UpdateDialog extends StatelessWidget {
                               onTap: () {
                                 if (Platform.isAndroid) {
                                   launchUrl(Uri.parse(
-                                      "market://details?id=com.hlsoft.efatorh"));
+                                      "market://details?id=com.hlsoft.appbase"));
                                 }
                                 if (Platform.isIOS) {
                                   launchUrl(Uri.parse(
-                                      "https://apps.apple.com/us/app/efatorh-%D8%A7%D9%8A-%D9%81%D8%A7%D8%AA%D9%88%D8%B1%D8%A9/id1627067636"));
+                                      "https://apps.apple.com/us/app/appbase-%D8%A7%D9%8A-%D9%81%D8%A7%D8%AA%D9%88%D8%B1%D8%A9/id1627067636"));
                                 }
                               },
                               child: Padding(

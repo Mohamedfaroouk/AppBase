@@ -1,10 +1,10 @@
 import 'package:easy_localization/easy_localization.dart';
-import 'package:efatorh/core/Router/Router.dart';
-import 'package:efatorh/core/services/navigation_service.dart';
-import 'package:efatorh/core/utils/Utils.dart';
-import 'package:efatorh/modules/auth/cubit/cubit.dart';
-import 'package:efatorh/modules/auth/cubit/states.dart';
-import 'package:efatorh/shared/widgets/customtext.dart';
+import 'package:appbase/core/Router/Router.dart';
+import 'package:appbase/core/services/navigation_service.dart';
+import 'package:appbase/core/utils/Utils.dart';
+import 'package:appbase/modules/auth/cubit/cubit.dart';
+import 'package:appbase/modules/auth/cubit/states.dart';
+import 'package:appbase/shared/widgets/customtext.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
@@ -68,7 +68,10 @@ class _ChangePhoneScreenState extends State<ChangePhoneScreen> {
                                     text: "send".tr(),
                                     onTap: () {
                                       if (_formKey.currentState!.validate()) {
-                                        context.pop({"phone": phone.removeZero, "countryCode": code});
+                                        context.pop({
+                                          "phone": phone.removeZero,
+                                          "countryCode": code
+                                        });
                                       }
                                     }),
                                 const SizedBox(
@@ -76,7 +79,8 @@ class _ChangePhoneScreenState extends State<ChangePhoneScreen> {
                                 ),
                                 TextButton(
                                   onPressed: () {
-                                    NavigationService.goNamed(Routes.loginRoute);
+                                    NavigationService.goNamed(
+                                        Routes.loginRoute);
                                   },
                                   child: CustomText(
                                     "backToLogin".tr(),

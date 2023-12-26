@@ -1,13 +1,13 @@
 import 'package:easy_localization/easy_localization.dart';
-import 'package:efatorh/modules/layout/cubit/cubit.dart';
-import 'package:efatorh/modules/layout/cubit/states.dart';
-import 'package:efatorh/modules/layout/presentation/widgets/drawer.dart';
-import 'package:efatorh/shared/widgets/intro_dialog.dart';
-import 'package:efatorh/shared/widgets/maintenance_dialog.dart';
-import 'package:efatorh/shared/widgets/update_dialog.dart';
+import 'package:appbase/modules/layout/cubit/cubit.dart';
+import 'package:appbase/modules/layout/cubit/states.dart';
+import 'package:appbase/modules/layout/presentation/widgets/drawer.dart';
+import 'package:appbase/shared/widgets/intro_dialog.dart';
+import 'package:appbase/shared/widgets/maintenance_dialog.dart';
+import 'package:appbase/shared/widgets/update_dialog.dart';
 import 'package:flutter/material.dart';
 
-import 'package:efatorh/core/utils/Utils.dart';
+import 'package:appbase/core/utils/Utils.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../shared/widgets/are_u_sure_dialog.dart';
 

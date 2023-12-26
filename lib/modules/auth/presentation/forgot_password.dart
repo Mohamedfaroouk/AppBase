@@ -1,8 +1,8 @@
 import 'package:easy_localization/easy_localization.dart';
-import 'package:efatorh/core/Router/Router.dart';
-import 'package:efatorh/core/utils/Utils.dart';
-import 'package:efatorh/modules/auth/cubit/cubit.dart';
-import 'package:efatorh/shared/widgets/textfield.dart';
+import 'package:appbase/core/Router/Router.dart';
+import 'package:appbase/core/utils/Utils.dart';
+import 'package:appbase/modules/auth/cubit/cubit.dart';
+import 'package:appbase/shared/widgets/textfield.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

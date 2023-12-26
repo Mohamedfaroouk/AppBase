@@ -1,4 +1,4 @@
-import 'package:efatorh/core/theme/dynamic_theme/colors.dart';
+import 'package:appbase/core/theme/dynamic_theme/colors.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 

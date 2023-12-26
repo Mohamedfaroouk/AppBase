@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:efatorh/core/utils/Utils.dart';
-import 'package:efatorh/core/utils/extentions.dart';
+import 'package:appbase/core/utils/Utils.dart';
+import 'package:appbase/core/utils/extentions.dart';
 
 import '../../core/theme/dynamic_theme/colors.dart';
 import 'back_icon.dart';

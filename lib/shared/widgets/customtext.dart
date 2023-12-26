@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:efatorh/core/utils/extentions.dart';
+import 'package:appbase/core/utils/extentions.dart';
 
 enum TextStyleEnum {
   normal,

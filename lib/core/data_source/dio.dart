@@ -1,8 +1,8 @@
 import 'dart:developer';
 
 import 'package:dio/dio.dart';
-import 'package:efatorh/core/Router/Router.dart';
-import 'package:efatorh/core/services/navigation_service.dart';
+import 'package:appbase/core/Router/Router.dart';
+import 'package:appbase/core/services/navigation_service.dart';
 import '../../shared/widgets/myLoading.dart';
 import '../utils/Utils.dart';
 import '../utils/alerts.dart';

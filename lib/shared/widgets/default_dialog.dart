@@ -1,4 +1,4 @@
-import 'package:efatorh/shared/widgets/customtext.dart';
+import 'package:appbase/shared/widgets/customtext.dart';
 import 'package:flutter/material.dart';
 
 import 'applogo.dart';

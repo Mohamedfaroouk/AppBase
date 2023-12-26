@@ -1,18 +1,18 @@
-import 'package:efatorh/core/Router/auth_guard.dart';
-import 'package:efatorh/modules/auth/presentation/change_password.dart';
-import 'package:efatorh/modules/auth/presentation/change_phone.dart';
-import 'package:efatorh/modules/auth/presentation/forgot_password.dart';
-import 'package:efatorh/modules/auth/presentation/otp.dart';
-import 'package:efatorh/modules/layout/presentation/layout.dart';
-import 'package:efatorh/modules/static_page/presentation/about_us.dart';
-import 'package:efatorh/modules/static_page/presentation/contact_us.dart';
+import 'package:appbase/core/Router/auth_guard.dart';
+import 'package:appbase/modules/auth/presentation/change_password.dart';
+import 'package:appbase/modules/auth/presentation/change_phone.dart';
+import 'package:appbase/modules/auth/presentation/forgot_password.dart';
+import 'package:appbase/modules/auth/presentation/otp.dart';
+import 'package:appbase/modules/home/presentation/home.dart';
+import 'package:appbase/modules/layout/presentation/layout.dart';
+import 'package:appbase/modules/static_page/presentation/about_us.dart';
+import 'package:appbase/modules/static_page/presentation/contact_us.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../modules/auth/presentation/login.dart';
 import '../../modules/auth/presentation/register.dart';
-import '../../modules/client/presentation/client.dart';
-import '../../modules/client/presentation/edit_add/edit_add_client.dart';
 import '../../modules/layout/presentation/mobile_layout.dart';
 import '../../modules/splash/presentation/splash.dart';
 
@@ -28,7 +28,7 @@ GlobalKey<NavigatorState> layoutRouteKey =
 class Routes {
   static const String changeBase = "changebase";
   static const String splashRoute = "/";
-  static const String onBoardingRoute = "/onBoarding";
+  static const String home = "/home";
   static const String otpScreen = "/otp-screen";
   static const String changePassword = "/reset-password";
   static const String verifyUser = "/verftyUser";
@@ -39,83 +39,15 @@ class Routes {
   static const String loginRoute = "/login";
 /////////////
 ////////////
-  static const String invoice = "/invoice";
-  static const String paymentMethodPage = "/paymentMethodPage";
-  static const String addClient = "/add_client";
-  static const String profilePage = "/ProfilePage";
-  static const String editClient = "/edit_client";
-  static const String updateClient = "/update_client";
-  static const String mainRoute = "/main";
-  static const String storeDetailsRoute = "/store-details";
-  static const String client = "/clients";
-  static const String payment = "/payment";
-  static const String posOffline = "/posOffline";
-  static const String reports = "/reports";
-  static const String purchaseRefund = "/purchaseRefund";
-  static const String currentPackedge = "/current_packedge";
-  static const String upgradePackedge = "/upgrade_packedge";
-  static const String notification = "/notificat/CreatePurchaseInvoiceion";
+////////////
+  static const String feature1 = "/feature1";
+  static const String feature2 = "/feature2";
+  static const String feature3 = "/feature3";
+
   static const String contactUs = "/contact-us";
   static const String aboutUs = "/about-us";
-  static const String createTaxReturn = "/createTaxReturn";
-  static const String suppliers = "/suppliers";
-  static const String editAddSupplier = "/editAddSupplier";
-  static const String productMovement = "/productMovement";
-  static const String cashier = "/cashier";
 
-  static const String paymentMethod = "/paymentMethod";
-  static const String addPaymentMethod = "/addPaymentMethod";
-  static const String editPaymentMethod = "/editPaymentMethod";
-
-  static const String supplier = "/supplier";
-  static const String addSupplier = "/addSupplier";
-  static const String editSupplier = "/editSupplier";
-
-  static const String category = "/category";
-  static const String addCategory = "/addCategory";
-  static const String editCategory = "/editCategory";
-
-  static const String tiler = "/tiler";
-  static const String addTiler = "/addTiler";
-  static const String editTiler = "/editTiler";
-  static const String shifts = "/shifts";
-
-  static const String employee = "/employee";
-  static const String addEmployee = "/addEmployee";
-  static const String editEmployee = "/editEmployee";
-
-  static const String product = "/product";
-  static const String addProduct = "/addProduct";
-  static const String editProduct = "/editProduct";
-
-  static const String sales = "/sales";
-  static const String showSales = "/showSales";
-  static const String refundSales = "/refundSales";
-
-  static const String purchaseInvoice = "/purchaseInvoice";
-  static const String addPurchaseInvoice = "/addPurchaseInvoice";
-  static const String showPurchaseInvoice = "/showPurchaseInvoice";
-  static const String refundPurchase = "/refundPurchase";
-
-  static const String quatation = "/quotation";
-  static const String createQuotation = "/createQuotation";
-  static const String viewQuotation = "/viewQuotation";
-
-  static const String taxReturn = "/taxReturn";
-  static const String addTaxReturn = "/addTaxReturn";
-  static const String viewTaxReturn = "/viewTaxReturn";
-
-  static const String stock = "/stock";
-
-  static const String packages = "/packages";
-  static const String viewPackages = "/viewPackages";
-  static const String upgradePackedgeDetails = "/upgrade_packedge_details";
-
-  static const String storeSetting = "/storeSetting";
-  static const String profile = "/profile";
-
-  static String currentRoute = "/";
-  static String needUpgrade = "/needUpgrade";
+  static String currentRoute = "";
   static AuthGuard authGuard = AuthGuard();
   GoRouter goRouter = GoRouter(
       // redirect: (context, state) {
@@ -184,42 +116,51 @@ class Routes {
                       child: child,
                     );
                   },
+                  //THIS FOR ROUTES IN THE BOTTOM NAVIGATION BAR
+                  //THIS FOR ROUTES IN THE BOTTOM NAVIGATION BAR
+                  //THIS FOR ROUTES IN THE BOTTOM NAVIGATION BAR
                   routes: [
                     GoRoute(
-                        parentNavigatorKey: mobileRouteKey,
-                        path: "/clients",
-                        name: Routes.client,
-                        pageBuilder: (context, state) => Routes.pageBuilder(
-                            context, state,
-                            child: const ClientScreen()),
-                        routes: [
-                          GoRoute(
-                            parentNavigatorKey: layoutRouteKey,
-                            path: "add",
-                            name: Routes.addClient,
-                            pageBuilder: (context, state) => Routes.pageBuilder(
-                                context, state,
-                                child: const EditAddClient()),
-                          ),
-                          GoRoute(
-                            parentNavigatorKey: layoutRouteKey,
-                            path: "edit",
-                            name: Routes.editClient,
-                            redirect: (context, state) {
-                              state.extra == null ? Routes.client : null;
-                              return null;
-                            },
-                            pageBuilder: (context, state) => Routes.pageBuilder(
-                              context,
-                              state,
-                              child: EditAddClient(
-                                client: (state.extra as Map?)?['client'],
-                              ),
-                            ),
-                          ),
-                        ])
+                      parentNavigatorKey: mobileRouteKey,
+                      path: "/Feature1",
+                      name: Routes.feature1,
+                      pageBuilder: (context, state) =>
+                          Routes.pageBuilder(context, state,
+                              child: Container(
+                                color: Colors.amber,
+                              )),
+                    ),
+                    GoRoute(
+                      parentNavigatorKey: mobileRouteKey,
+                      path: "/home",
+                      name: Routes.home,
+                      pageBuilder: (context, state) => Routes.pageBuilder(
+                          context, state,
+                          child: const HomeScreen()),
+                    ),
+                    GoRoute(
+                      parentNavigatorKey: mobileRouteKey,
+                      path: "/Feature2",
+                      name: Routes.feature2,
+                      pageBuilder: (context, state) =>
+                          Routes.pageBuilder(context, state,
+                              child: Container(
+                                color: Colors.red,
+                              )),
+                    ),
+                    GoRoute(
+                      parentNavigatorKey: mobileRouteKey,
+                      path: "/Feature3",
+                      name: Routes.feature3,
+                      pageBuilder: (context, state) =>
+                          Routes.pageBuilder(context, state,
+                              child: Container(
+                                color: Colors.green,
+                              )),
+                    ),
                   ]),
 
+              /// ROUTES OUTSIDE THE BOTTOM NAVIGATION BAR
               GoRoute(
                 parentNavigatorKey: layoutRouteKey,
                 path: '/contactUs',

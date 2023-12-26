@@ -1,6 +1,6 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:efatorh/core/utils/Utils.dart';
+import 'package:appbase/core/utils/Utils.dart';
 
 extension Photo on String {
   String png([String? path = "images"]) => 'assets/$path/$this.png';
@@ -52,6 +52,7 @@ extension WidgetExtensions on Widget {
 // Get name file from link
 extension NameFromUrl on String {
   String nameFromUrl() {
-  int index = this.lastIndexOf("/")+1;
-  return this.replaceRange(0, index, "")/* .replaceAll(".pdf", "") */;
+    int index = lastIndexOf("/") + 1;
+    return replaceRange(0, index, "") /* .replaceAll(".pdf", "") */;
   }
+}

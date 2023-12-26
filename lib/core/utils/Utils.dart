@@ -4,7 +4,7 @@ import 'dart:math';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
-import 'package:efatorh/modules/auth/domain/model/user_model.dart';
+import 'package:appbase/modules/auth/domain/model/user_model.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../../shared/componants/store_setting_model.dart';

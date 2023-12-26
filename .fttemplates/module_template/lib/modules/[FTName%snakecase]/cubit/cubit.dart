@@ -1,5 +1,5 @@
-import 'package:efatorh/core/utils/alerts.dart';
-import 'package:efatorh/modules/<FTName | snakecase>/domain/model/<FTName | snakecase>_model.dart';
+import 'package:appbase/core/utils/alerts.dart';
+import 'package:appbase/modules/<FTName | snakecase>/domain/model/<FTName | snakecase>_model.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart';
 import '../../../core/data_source/dio.dart';
